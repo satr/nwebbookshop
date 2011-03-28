@@ -1,5 +1,0 @@
-D:\Projects\PATestApp\PATestApp.Common\bin\Debug\PATestApp.Common.dll
-D:\Projects\PATestApp\PATestApp.Common\bin\Debug\PATestApp.Common.pdb
-D:\Projects\PATestApp\PATestApp.Common\obj\Debug\ResolveAssemblyReference.cache
-D:\Projects\PATestApp\PATestApp.Common\obj\Debug\PATestApp.Common.dll
-D:\Projects\PATestApp\PATestApp.Common\obj\Debug\PATestApp.Common.pdb
