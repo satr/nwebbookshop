@@ -1,0 +1,5 @@
+D:\Projects\PATestApp\PATestApp.Entities\bin\Debug\PATestApp.Entities.dll
+D:\Projects\PATestApp\PATestApp.Entities\bin\Debug\PATestApp.Entities.pdb
+D:\Projects\PATestApp\PATestApp.Entities\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\PATestApp\PATestApp.Entities\obj\Debug\PATestApp.Entities.dll
+D:\Projects\PATestApp\PATestApp.Entities\obj\Debug\PATestApp.Entities.pdb
