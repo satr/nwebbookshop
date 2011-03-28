@@ -1,0 +1,9 @@
+D:\Projects\PATestApp\PATestApp.DAL\bin\Debug\PATestApp.DAL.dll
+D:\Projects\PATestApp\PATestApp.DAL\bin\Debug\PATestApp.DAL.pdb
+D:\Projects\PATestApp\PATestApp.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\PATestApp\PATestApp.DAL\obj\Debug\PATestApp.DAL.dll
+D:\Projects\PATestApp\PATestApp.DAL\obj\Debug\PATestApp.DAL.pdb
+D:\Projects\PATestApp\PATestApp.DAL\bin\Debug\PATestApp.Common.dll
+D:\Projects\PATestApp\PATestApp.DAL\bin\Debug\PATestApp.Entities.dll
+D:\Projects\PATestApp\PATestApp.DAL\bin\Debug\PATestApp.Entities.pdb
+D:\Projects\PATestApp\PATestApp.DAL\bin\Debug\PATestApp.Common.pdb

@@ -1,0 +1,13 @@
+D:\Projects\PATestApp\WebApp\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\PATestApp\WebApp\bin\WebApp.dll
+D:\Projects\PATestApp\WebApp\bin\WebApp.pdb
+D:\Projects\PATestApp\WebApp\bin\PATestApp.BL.dll
+D:\Projects\PATestApp\WebApp\bin\PATestApp.Common.dll
+D:\Projects\PATestApp\WebApp\bin\PATestApp.DAL.dll
+D:\Projects\PATestApp\WebApp\bin\PATestApp.Entities.dll
+D:\Projects\PATestApp\WebApp\bin\PATestApp.DAL.pdb
+D:\Projects\PATestApp\WebApp\bin\PATestApp.Common.pdb
+D:\Projects\PATestApp\WebApp\bin\PATestApp.Entities.pdb
+D:\Projects\PATestApp\WebApp\bin\PATestApp.BL.pdb
+D:\Projects\PATestApp\WebApp\obj\Debug\WebApp.dll
+D:\Projects\PATestApp\WebApp\obj\Debug\WebApp.pdb
