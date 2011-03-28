@@ -1,16 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml;
 using PATestApp.Entities;
 
 namespace PATestApp.DAL {
     public class LibraryDataProvider : ILibraryDataProvider {
+        
+        const string BOOK_FILE_NAME = "books.xml";
+        
+        private static class BookProperties {
+            public const string Book = "book";
+            public const string Authors = "authors";
+            public const string ISBN = "isbn";
+            public const string Title = "title";
+            public const string Price = "price";
+            public const string PublishedYear = "publishedyear";
+        }
+
         public List<Book> GetBooks(){
 //            List<Book> books = GetTestBooks();
             List<Book> books = GetBooksFromXml();
@@ -23,14 +32,14 @@ namespace PATestApp.DAL {
             var document = new XmlDocument();
             var assemblyPath = Assembly.GetExecutingAssembly().CodeBase.Substring(8).Replace('/', '\\');
             var dataFilePath = new FileInfo(assemblyPath).DirectoryName?? string.Empty;
-            var fileInfo = new FileInfo(Path.Combine(dataFilePath, "books.xml"));
+            var fileInfo = new FileInfo(Path.Combine(dataFilePath, BOOK_FILE_NAME));
             if (!fileInfo.Exists){
                 Debug.Fail("File with books not exist");
                 return books;
             }
             using (FileStream stream = fileInfo.OpenRead()) {
                 document.Load(stream);
-                books = LoadBooks(document.DocumentElement.GetElementsByTagName("book"));
+                books = LoadBooks(document.DocumentElement.GetElementsByTagName(BookProperties.Book));
             }
             return books;
         }
@@ -41,10 +50,10 @@ namespace PATestApp.DAL {
                 return books;
             foreach (XmlNode node in nodes) {
                 var book = new Book();
-                book.ISBN = GetValueFor(node, "isbn");
-                book.Title = GetValueFor(node, "title");
-                book.Price = GetNumValueFor(node, "price");
-                book.PublishedYear = GetIntValueFor(node, "publishedyear");
+                book.ISBN = GetValueFor(node, BookProperties.ISBN);
+                book.Title = GetValueFor(node, BookProperties.Title);
+                book.Price = GetNumValueFor(node, BookProperties.Price);
+                book.PublishedYear = GetIntValueFor(node, BookProperties.PublishedYear);
                 book.Authors = LoadAuthors(node);
                 books.Add(book);
             }
@@ -55,7 +64,7 @@ namespace PATestApp.DAL {
             var authors = new List<string>();
             if (parentNode == null)
                 return authors;
-            var authorNode = parentNode.SelectSingleNode("authors");
+            var authorNode = parentNode.SelectSingleNode(BookProperties.Authors);
             if (authorNode == null)
                 return authors;
             foreach (XmlNode node in authorNode.ChildNodes)
@@ -83,6 +92,7 @@ namespace PATestApp.DAL {
             return targetNode != null ?targetNode.InnerText: string.Empty;
         }
 
+/*
         private List<Book> GetTestBooks(){
             var books = new List<Book>();
             books.Add(GetBook(0, "Title1", 12.3m));
@@ -101,5 +111,6 @@ namespace PATestApp.DAL {
             book.PublishedYear = DateTime.Now.Year - set;
             return book;
         }
+*/
     }
 }
