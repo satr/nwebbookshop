@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebApp {
-    public partial class _Default : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
+    public partial class _Default : System.Web.UI.Page, IView {
+        private Presenter _presenter;
 
+        protected void Page_Load(object sender, EventArgs e){
+            _presenter = new Presenter(this);
         }
 
-        protected void buttonRefresh_Click(object sender, EventArgs e) {
-            var libraryProvider = PATestApp.BL.BusinessProviderFactory.GetLibraryBusinessProvider();
-            gridView.DataSource = libraryProvider.GetBooks();
+        protected void buttonRefresh_Click(object sender, EventArgs e){
+            _presenter.LoadData();
+        }
+
+        public void RefreshView(object dataSource){
+            gridView.DataSource = dataSource;
             gridView.DataBind();
         }
     }
